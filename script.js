@@ -142,9 +142,31 @@ function initializeApp() {
     setupLazyLoading();
     setupSmoothScrolling();
     setupFancybox();
+    setupMobileResponsiveness();
 
     // Log initialization
     console.log("✅ Elite Gym App Initialized Successfully!");
+}
+
+// ============================================
+// MOBILE RESPONSIVENESS SETUP
+// ============================================
+
+function setupMobileResponsiveness() {
+    // Disable animations on very small screens
+    if (window.innerWidth <= 576) {
+        // Reduce animation complexity on mobile
+        gsap.config({ autoKillThreshold: 0.01 });
+    }
+    
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            ScrollTrigger.refresh();
+        }, 250);
+    });
 }
 
 // ============================================
@@ -168,6 +190,9 @@ function setupFancybox() {
 // ============================================
 
 function setupScrollAnimations() {
+    // Check if device is mobile
+    const isMobile = window.innerWidth <= 768;
+    
     // Service Cards Animation
     gsap.utils.toArray(".service-card").forEach((card, index) => {
         gsap.fromTo(
@@ -187,8 +212,9 @@ function setupScrollAnimations() {
                     trigger: card,
                     start: "top 80%",
                     end: "top 20%",
-                    scrub: 1,
+                    scrub: isMobile ? false : 1,
                     markers: false,
+                    invalidateOnRefresh: true,
                 },
             }
         );
@@ -211,8 +237,9 @@ function setupScrollAnimations() {
                     trigger: card,
                     start: "top 75%",
                     end: "top 20%",
-                    scrub: 1,
+                    scrub: isMobile ? false : 1,
                     markers: false,
+                    invalidateOnRefresh: true,
                 },
             }
         );
@@ -235,8 +262,9 @@ function setupScrollAnimations() {
                     trigger: item,
                     start: "top 80%",
                     end: "top 20%",
-                    scrub: 1,
+                    scrub: isMobile ? false : 1,
                     markers: false,
+                    invalidateOnRefresh: true,
                 },
             }
         );
@@ -259,8 +287,9 @@ function setupScrollAnimations() {
                     trigger: card,
                     start: "top 80%",
                     end: "top 20%",
-                    scrub: 1,
+                    scrub: isMobile ? false : 1,
                     markers: false,
+                    invalidateOnRefresh: true,
                 },
             }
         );
@@ -285,16 +314,17 @@ function setupScrollAnimations() {
                     trigger: box,
                     start: "top 80%",
                     end: "top 20%",
-                    scrub: 1,
+                    scrub: isMobile ? false : 1,
                     markers: false,
+                    invalidateOnRefresh: true,
                 },
             }
         );
     });
 
-    // Parallax effect on hero section
+    // Parallax effect on hero section (disabled on mobile)
     const heroSection = document.querySelector(".hero-section");
-    if (heroSection) {
+    if (heroSection && !isMobile) {
         gsap.fromTo(
             ".hero-background",
             {
@@ -308,6 +338,7 @@ function setupScrollAnimations() {
                     end: "bottom top",
                     scrub: 0.5,
                     markers: false,
+                    invalidateOnRefresh: true,
                 },
             }
         );

@@ -1255,6 +1255,11 @@ a {
         --spacing-2xl: 2rem;
     }
 
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
     .hero-title {
         font-size: 2rem;
     }
@@ -1314,6 +1319,19 @@ a {
 
     .testimonial-card {
         border-left: 3px solid var(--primary-color);
+    }
+
+    /* Disable complex animations on mobile */
+    .hero-background::before,
+    .hero-background::after {
+        animation: none !important;
+        display: none;
+    }
+
+    /* Optimize scrolling performance */
+    * {
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000;
     }
 }
 
