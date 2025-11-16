@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your Gym - Premium fitness center offering state-of-the-art equipment, professional training, and comprehensive wellness programs. Transform your fitness journey with our expert trainers in UAE.">
+    <meta name="keywords" content="gym, fitness, health, workout, training, fitness center, gym near me, personal training, weight loss, muscle building, wellness, health club, gym UAE, fitness classes, professional trainers">
+    <meta name="author" content="Your Gym">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- Open Graph SEO Tags -->
+    <meta property="og:title" content="Your Gym - Transform Your Fitness Journey">
+    <meta property="og:description" content="Premium gym with state-of-the-art equipment, professional trainers, and comprehensive fitness programs in UAE.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=630&fit=crop">
+    <meta property="og:url" content="https://elitegym.com">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your Gym - Transform Your Fitness Journey">
+    <meta name="twitter:description" content="Premium gym with state-of-the-art equipment and professional trainers in UAE.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=630&fit=crop">
+    
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="">
+    
+    <!-- Schema Markup - Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Your Gym",
+        "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&h=500&fit=crop",
+        "description": "Premium fitness center with state-of-the-art equipment and professional trainers",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "UAE",
+            "addressCountry": "AE"
+        },
+        "telephone": "+971-XX-XXXXXXX",
+        "email": "info@elitegym.com",
+        "url": "https://elitegym.com",
+        "priceRange": "$$$"
+    }
+    </script>
+    
+    <!-- Schema Markup - Service -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HealthAndBeautyBusiness",
+        "name": "Your Gym",
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "Membership Plans",
+                "description": "Flexible gym membership plans for all fitness levels"
+            },
+            {
+                "@type": "Offer",
+                "name": "Personal Training",
+                "description": "Professional personal training sessions with certified trainers"
+            },
+            {
+                "@type": "Offer",
+                "name": "Group Classes",
+                "description": "Variety of group fitness classes including yoga, Zumba, and CrossFit"
+            }
+        ],
+        "areaServed": "AE"
+    }
+    </script>
+    
+    <title>Your Gym - Premium Fitness Center | Professional Training | UAE</title>
+    <link rel="canonical" href="https://elitegym.com">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='75' font-size='75' fill='%23ff006e'%3E💪%3C/text%3E%3C/svg%3E">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.css">
+    
+    <!-- Toastify CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-lg navbar-animate">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#home">
+                <i class="fas fa-dumbbell"></i> Your Gym
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#plans">Plans</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-danger pulse-button ms-2 call-btn-nav" data-bs-toggle="modal" data-bs-target="#callModal">
+                <i class="fas fa-phone"></i> Call Us
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section position-relative overflow-hidden">
+        <div class="hero-background"></div>
+        <div class="container-fluid h-100 d-flex align-items-center justify-content-center">
+            <div class="row w-100 align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="hero-title display-3 fw-bold mb-4">
+                        Transform Your <span class="gradient-text">Fitness Journey</span>
+                    </h1>
+                    <p class="hero-subtitle fs-5 mb-4 text-muted">
+                        Experience premium fitness with state-of-the-art equipment, professional trainers, and personalized wellness programs
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-danger btn-lg me-3 pulse-button" data-bs-toggle="modal" data-bs-target="#callModal">
+                            <i class="fas fa-phone me-2"></i>Call Us Now
+                        </button>
+                        <a href="#plans" class="btn btn-outline-danger btn-lg">
+                            <i class="fas fa-tag me-2"></i>View Plans
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-image">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop&q=80" alt="Professional gym equipment and fitness training" class="img-fluid rounded-3 hero-img-animate">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-sm-6 mb-4 stat-box">
+                    <div class="stat-counter" data-target="5000">0</div>
+                    <p class="stat-label">Happy Members</p>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4 stat-box">
+                    <div class="stat-counter" data-target="50">0</div>
+                    <p class="stat-label">Professional Trainers</p>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4 stat-box">
+                    <div class="stat-counter" data-target="100">0</div>
+                    <p class="stat-label">Fitness Classes</p>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4 stat-box">
+                    <div class="stat-counter" data-target="15">0</div>
+                    <p class="stat-label">Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Our Premium Services</h2>
+                <p class="section-subtitle">Comprehensive fitness solutions tailored to your needs</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 service-card-wrapper">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Weight Training</h3>
+                        <p>State-of-the-art equipment for strength training and muscle building</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 service-card-wrapper">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Cardio Training</h3>
+                        <p>Advanced cardio equipment for endurance and heart health</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 service-card-wrapper">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-person-hiking"></i>
+                        </div>
+                        <h3>Yoga & Flexibility</h3>
+                        <p>Improve flexibility and mental wellness with guided yoga sessions</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 service-card-wrapper">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Personal Training</h3>
+                        <p>One-on-one sessions with certified professional trainers</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 service-card-wrapper">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>Group Classes</h3>
+                        <p>Fun and motivating group fitness classes including Zumba and CrossFit</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 service-card-wrapper">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <h3>Nutrition Coaching</h3>
+                        <p>Personalized nutrition plans to complement your fitness goals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Plans Section -->
+    <section id="plans" class="plans-section py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Flexible Membership Plans</h2>
+                <p class="section-subtitle">Choose the perfect plan for your fitness goals</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 plan-card-wrapper">
+                    <div class="plan-card">
+                        <h3 class="plan-name">Basic</h3>
+                        <div class="plan-price">
+                            <span class="currency">AED</span>
+                            <span class="amount">299</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Gym access 24/7</li>
+                            <li><i class="fas fa-check"></i> All equipment access</li>
+                            <li><i class="fas fa-check"></i> Locker facilities</li>
+                            <li><i class="fas fa-times"></i> Personal trainer</li>
+                            <li><i class="fas fa-times"></i> Group classes</li>
+                        </ul>
+                        <button class="btn btn-outline-danger btn-block w-100" data-bs-toggle="modal" data-bs-target="#callModal">Join Now</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 plan-card-wrapper">
+                    <div class="plan-card featured">
+                        <div class="plan-badge">POPULAR</div>
+                        <h3 class="plan-name">Premium</h3>
+                        <div class="plan-price">
+                            <span class="currency">AED</span>
+                            <span class="amount">599</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Gym access 24/7</li>
+                            <li><i class="fas fa-check"></i> All equipment access</li>
+                            <li><i class="fas fa-check"></i> Locker facilities</li>
+                            <li><i class="fas fa-check"></i> 4 personal training sessions</li>
+                            <li><i class="fas fa-check"></i> Unlimited group classes</li>
+                        </ul>
+                        <button class="btn btn-danger btn-block w-100" data-bs-toggle="modal" data-bs-target="#callModal">Join Now</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 plan-card-wrapper">
+                    <div class="plan-card">
+                        <h3 class="plan-name">Elite</h3>
+                        <div class="plan-price">
+                            <span class="currency">AED</span>
+                            <span class="amount">999</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Gym access 24/7</li>
+                            <li><i class="fas fa-check"></i> All equipment access</li>
+                            <li><i class="fas fa-check"></i> Premium locker</li>
+                            <li><i class="fas fa-check"></i> Unlimited personal training</li>
+                            <li><i class="fas fa-check"></i> Unlimited group classes</li>
+                        </ul>
+                        <button class="btn btn-outline-danger btn-block w-100" data-bs-toggle="modal" data-bs-target="#callModal">Join Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Our Facilities</h2>
+                <p class="section-subtitle">State-of-the-art gym equipment and premium facilities</p>
+            </div>
+            <div class="row g-3">
+                <div class="col-lg-3 col-md-6 gallery-item">
+                    <a href="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Premium Gym Equipment">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop&q=80" alt="Premium gym equipment and weight training area" class="img-fluid rounded-3">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-item">
+                    <a href="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Cardio Zone">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=400&fit=crop&q=80" alt="Modern cardio equipment fitness center" class="img-fluid rounded-3">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-item">
+                    <a href="https://images.unsplash.com/photo-1552807552-adf29464af70?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Training Area">
+                        <img src="https://images.unsplash.com/photo-1552807552-adf29464af70?w=400&h=400&fit=crop&q=80" alt="Professional fitness training area with mirrors" class="img-fluid rounded-3">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-item">
+                    <a href="https://images.unsplash.com/photo-1540497905925-fd7e4d77202e?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Yoga Studio">
+                        <img src="https://images.unsplash.com/photo-1540497905925-fd7e4d77202e?w=400&h=400&fit=crop&q=80" alt="Relaxing yoga studio for flexibility training" class="img-fluid rounded-3">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-item">
+                    <a href="https://images.unsplash.com/photo-1517836357463-d25ddfcb85c7?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Group Classes">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25ddfcb85c7?w=400&h=400&fit=crop&q=80" alt="Dynamic group fitness classes and training sessions" class="img-fluid rounded-3">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-item">
+                    <a href="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Recovery Zone">
+                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=400&fit=crop&q=80" alt="Wellness recovery zone and relaxation area" class="img-fluid rounded-3">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-item">
+                    <a href="https://images.unsplash.com/photo-1574080447640-fa42b5b10dc9?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Swimming Pool">
+                        <img src="https://images.unsplash.com/photo-1574080447640-fa42b5b10dc9?w=400&h=400&fit=crop&q=80" alt="Olympic size swimming pool for aquatic fitness" class="img-fluid rounded-3">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-item">
+                    <a href="https://images.unsplash.com/photo-1618519764d0-50cabcf1e0dd?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Spa & Sauna">
+                        <img src="https://images.unsplash.com/photo-1618519764d0-50cabcf1e0dd?w=400&h=400&fit=crop&q=80" alt="Luxury spa and sauna relaxation facility" class="img-fluid rounded-3">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">What Our Members Say</h2>
+                <p class="section-subtitle">Real stories from real fitness enthusiasts</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 testimonial-card-wrapper">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Your Gym transformed my fitness journey! The trainers are incredibly knowledgeable and the facilities are world-class. Highly recommended!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://i.pravatar.cc/150?img=1" alt="Ahmed Al-Mansouri testimonial">
+                            </div>
+                            <div class="author-info">
+                                <p class="author-name">Ahmed Al-Mansouri</p>
+                                <p class="author-title">Member since 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 testimonial-card-wrapper">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Best gym in UAE! The equipment is top-notch, the staff is friendly, and the group classes are amazing. Worth every AED!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://i.pravatar.cc/150?img=2" alt="Fatima Hassan testimonial">
+                            </div>
+                            <div class="author-info">
+                                <p class="author-name">Fatima Hassan</p>
+                                <p class="author-title">Premium Member</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 testimonial-card-wrapper">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"I achieved my weight loss goals in just 6 months with their personal training! The nutrition coaching is a game-changer."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://i.pravatar.cc/150?img=3" alt="Mohammad Khan testimonial">
+                            </div>
+                            <div class="author-info">
+                                <p class="author-name">Mohammad Khan</p>
+                                <p class="author-title">Elite Member</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Have questions? We'd love to hear from you</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 contact-box">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+97100000000">+971 00 000 0000</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6 contact-box">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@elitegym.com">info@elitegym.com</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6 contact-box">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Premium Gym, Dubai, UAE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title mb-3">Your Gym</h5>
+                    <p>Transform your fitness journey with our premium facilities and professional trainers.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title mb-3">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#plans">Plans</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title mb-3">Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Weight Training</a></li>
+                        <li><a href="#">Cardio Training</a></li>
+                        <li><a href="#">Personal Training</a></li>
+                        <li><a href="#">Group Classes</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title mb-3">Operating Hours</h5>
+                    <p>Monday - Friday: 6:00 AM - 11:00 PM</p>
+                    <p>Saturday - Sunday: 7:00 AM - 10:00 PM</p>
+                    <p>Holidays: 9:00 AM - 9:00 PM</p>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 Your Gym. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed & Developed By <a href="https://dilawarpro.com" class="footer-credit" target="_blank">Dilawar Pro <i class="fas fa-heart"></i></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Call Modal -->
+    <div class="modal fade" id="callModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Call Us Now</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <p class="fs-5 mb-4">Ready to start your fitness journey?</p>
+                    <a href="tel:+97100000000" class="btn btn-danger btn-lg w-100 mb-2">
+                        <i class="fas fa-phone me-2"></i>+971 00 000 0000
+                    </a>
+                    <p class="text-muted mt-3">Available 24/7 for inquiries and membership registration</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Modal -->
+    <div class="modal fade" id="chatbotModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content chatbot-modal">
+                <div class="modal-header chatbot-header border-0">
+                    <h5 class="modal-title"><i class="fas fa-comments me-2"></i>Your Gym Assistant</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body chatbot-body" id="chatbotBody">
+                    <div class="chat-message bot-message">
+                        <p>👋 Hi there! Welcome to Your Gym. How can I help you today?</p>
+                    </div>
+                </div>
+                <div class="modal-footer chatbot-footer border-0 flex-column gap-2">
+                    <div class="chatbot-suggestions w-100" id="chatbotSuggestions">
+                        <button class="btn btn-sm btn-outline-danger w-100 text-start chatbot-btn" data-option="1">
+                            <i class="fas fa-tag me-2"></i>View Membership Plans
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger w-100 text-start chatbot-btn" data-option="2">
+                            <i class="fas fa-user-tie me-2"></i>Personal Training Info
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger w-100 text-start chatbot-btn" data-option="3">
+                            <i class="fas fa-map-marker-alt me-2"></i>Location & Hours
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger w-100 text-start chatbot-btn" data-option="4">
+                            <i class="fas fa-calendar me-2"></i>Book a Visit
+                        </button>
+                    </div>
+                    <a href="tel:+97100000000" class="btn btn-danger w-100 mt-2">
+                        <i class="fas fa-phone me-2"></i>Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Fancybox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/4.0.36/fancybox.umd.min.js"></script>
+    
+    <!-- Toastify JS -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
