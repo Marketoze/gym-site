@@ -6,10 +6,7 @@
 // INITIALIZATION & CONFIG
 // ============================================
 
-// Register GSAP Plugin
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-// Configuration
+// Configuration (GSAP removed - animations disabled)
 const CONFIG = {
     animationDuration: 0.6,
     staggerDelay: 0.1,
@@ -132,16 +129,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function initializeApp() {
     // Initialize components
-    setupScrollAnimations();
-    setupStatsCounter();
-    setupServiceCards();
+    setupFancybox();
     setupFloatingButtons();
     setupChatbot();
     setupFormValidation();
     setupToastNotifications();
     setupLazyLoading();
     setupSmoothScrolling();
-    setupFancybox();
 
     // Log initialization
     console.log("✅ Elite Gym App Initialized Successfully!");
@@ -164,218 +158,7 @@ function setupFancybox() {
 }
 
 // ============================================
-// SCROLL ANIMATIONS WITH GSAP
-// ============================================
-
-function setupScrollAnimations() {
-    // Service Cards Animation
-    gsap.utils.toArray(".service-card").forEach((card, index) => {
-        gsap.fromTo(
-            card,
-            {
-                opacity: 0,
-                y: 100,
-                rotation: -5,
-            },
-            {
-                opacity: 1,
-                y: 0,
-                rotation: 0,
-                duration: 0.8,
-                delay: index * 0.1,
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 80%",
-                    end: "top 20%",
-                    scrub: 1,
-                    markers: false,
-                },
-            }
-        );
-    });
-
-    // Plan Cards Animation
-    gsap.utils.toArray(".plan-card").forEach((card, index) => {
-        gsap.fromTo(
-            card,
-            {
-                opacity: 0,
-                scale: 0.8,
-            },
-            {
-                opacity: 1,
-                scale: 1,
-                duration: 0.8,
-                delay: index * 0.15,
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 75%",
-                    end: "top 20%",
-                    scrub: 1,
-                    markers: false,
-                },
-            }
-        );
-    });
-
-    // Gallery Items Animation
-    gsap.utils.toArray(".gallery-item").forEach((item, index) => {
-        gsap.fromTo(
-            item,
-            {
-                opacity: 0,
-                x: index % 2 === 0 ? -100 : 100,
-            },
-            {
-                opacity: 1,
-                x: 0,
-                duration: 0.8,
-                delay: index * 0.1,
-                scrollTrigger: {
-                    trigger: item,
-                    start: "top 80%",
-                    end: "top 20%",
-                    scrub: 1,
-                    markers: false,
-                },
-            }
-        );
-    });
-
-    // Testimonial Cards Animation
-    gsap.utils.toArray(".testimonial-card").forEach((card, index) => {
-        gsap.fromTo(
-            card,
-            {
-                opacity: 0,
-                y: 100,
-            },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                delay: index * 0.15,
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 80%",
-                    end: "top 20%",
-                    scrub: 1,
-                    markers: false,
-                },
-            }
-        );
-    });
-
-    // Contact Boxes Animation
-    gsap.utils.toArray(".contact-box").forEach((box, index) => {
-        gsap.fromTo(
-            box,
-            {
-                opacity: 0,
-                y: 80,
-                rotate: -2,
-            },
-            {
-                opacity: 1,
-                y: 0,
-                rotate: 0,
-                duration: 0.8,
-                delay: index * 0.12,
-                scrollTrigger: {
-                    trigger: box,
-                    start: "top 80%",
-                    end: "top 20%",
-                    scrub: 1,
-                    markers: false,
-                },
-            }
-        );
-    });
-
-    // Parallax effect on hero section
-    const heroSection = document.querySelector(".hero-section");
-    if (heroSection) {
-        gsap.fromTo(
-            ".hero-background",
-            {
-                y: 0,
-            },
-            {
-                y: -100,
-                scrollTrigger: {
-                    trigger: heroSection,
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: 0.5,
-                    markers: false,
-                },
-            }
-        );
-    }
-}
-
-// ============================================
-// STATS COUNTER ANIMATION
-// ============================================
-
-function setupStatsCounter() {
-    const counters = document.querySelectorAll(".stat-counter");
-
-    counters.forEach((counter) => {
-        const target = parseInt(counter.getAttribute("data-target"));
-        const duration = 2; // 2 seconds
-
-        gsap.fromTo(
-            counter,
-            {
-                innerText: 0,
-            },
-            {
-                innerText: target,
-                duration: duration,
-                scrollTrigger: {
-                    trigger: counter,
-                    start: "top 80%",
-                    once: true,
-                    markers: false,
-                },
-                snap: { innerText: 1 },
-                onUpdate: function () {
-                    counter.innerText = Math.ceil(parseInt(counter.innerText));
-                },
-            }
-        );
-    });
-}
-
-// ============================================
-// SERVICE CARDS INTERACTIONS
-// ============================================
-
-function setupServiceCards() {
-    const serviceCards = document.querySelectorAll(".service-card");
-
-    serviceCards.forEach((card) => {
-        card.addEventListener("mouseenter", function () {
-            gsap.to(this, {
-                duration: 0.3,
-                y: -20,
-                boxShadow: "0 20px 60px rgba(255, 0, 110, 0.3)",
-            });
-        });
-
-        card.addEventListener("mouseleave", function () {
-            gsap.to(this, {
-                duration: 0.3,
-                y: 0,
-                boxShadow: "0 8px 24px rgba(0, 0, 0, 0.15)",
-            });
-        });
-    });
-}
-
-// ============================================
-// FLOATING BUTTONS
+// FLOATING BUTTONS (Animations removed)
 // ============================================
 
 function setupFloatingButtons() {
@@ -411,33 +194,6 @@ function setupFloatingButtons() {
             modal.show();
         });
     }
-
-    // Animate floating buttons on scroll
-    gsap.utils.toArray(".whatsapp-btn, .vibrating-call-btn, .chatbot-btn-toggle")
-        .forEach((btn) => {
-            gsap.fromTo(
-                btn,
-                {
-                    opacity: 0,
-                    scale: 0,
-                },
-                {
-                    opacity: 1,
-                    scale: 1,
-                    duration: 0.6,
-                    delay: 0.5,
-                }
-            );
-
-            // Floating animation
-            gsap.to(btn, {
-                y: -10,
-                duration: 2,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-            });
-        });
 }
 
 function createFloatingButton(href, icon, className, styles) {
@@ -527,20 +283,6 @@ function setupChatbot() {
 
         // Scroll to bottom
         chatbotBody.scrollTop = chatbotBody.scrollHeight;
-
-        // Animate message
-        gsap.fromTo(
-            messageDiv,
-            {
-                opacity: 0,
-                y: 20,
-            },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.3,
-            }
-        );
     }
 
     function updateChatbotSuggestions(suggestions) {
@@ -744,7 +486,7 @@ function setupLazyLoading() {
 }
 
 // ============================================
-// SMOOTH SCROLLING
+// SMOOTH SCROLLING (Standard anchor navigation)
 // ============================================
 
 function setupSmoothScrolling() {
@@ -759,39 +501,8 @@ function setupSmoothScrolling() {
 
             if (target) {
                 e.preventDefault();
-
-                gsap.to(window, {
-                    scrollTo: {
-                        y: target,
-                        autoKill: false,
-                    },
-                    duration: 1,
-                    ease: "power2.inOut",
-                });
+                target.scrollIntoView({ behavior: "smooth" });
             }
-        });
-    });
-}
-
-// ============================================
-// REVEAL EFFECT ON SCROLL
-// ============================================
-
-function setupRevealEffect() {
-    const reveals = document.querySelectorAll("[data-reveal]");
-
-    reveals.forEach((reveal) => {
-        gsap.from(reveal, {
-            scrollTrigger: {
-                trigger: reveal,
-                start: "top 80%",
-                end: "top 20%",
-                scrub: 1,
-                markers: false,
-            },
-            opacity: 0,
-            y: 100,
-            duration: 0.8,
         });
     });
 }
@@ -853,8 +564,7 @@ function debounce(func, wait) {
 window.addEventListener(
     "resize",
     debounce(function () {
-        // Refresh ScrollTrigger on resize
-        ScrollTrigger.refresh();
+        // Window resize handled
     }, 250)
 );
 
@@ -893,16 +603,7 @@ function getCurrentDate() {
 // Call button in navbar
 document.querySelectorAll(".call-btn-nav").forEach((btn) => {
     btn.addEventListener("click", function () {
-        gsap.to(this, {
-            duration: 0.3,
-            scale: 1.1,
-        });
-
-        gsap.to(this, {
-            duration: 0.3,
-            delay: 0.2,
-            scale: 1,
-        });
+        // Button click handled
     });
 });
 
