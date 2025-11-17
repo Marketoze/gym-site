@@ -411,12 +411,16 @@ function setupServiceCards() {
 // ============================================
 
 function setupFloatingButtons() {
+    // Verify Font Awesome is loaded
+    console.log('Font Awesome loaded:', typeof FontAwesome !== 'undefined');
+    
     // WhatsApp Button
     const whatsappBtn = createFloatingButton(
         "https://wa.me/971XXXXXXX?text=Hi%20I%27m%20interested%20in%20Elite%20Gym%20membership",
         '<i class="fab fa-whatsapp"></i>',
         "whatsapp-btn",
-        "bottom: 100px; left: 20px;"
+        "bottom: 100px; left: 20px;",
+        "WhatsApp"
     );
 
     // Vibrating Call Button
@@ -424,7 +428,8 @@ function setupFloatingButtons() {
         "tel:+97100000000",
         '<i class="fas fa-phone"></i>',
         "vibrating-call-btn",
-        "bottom: 170px; left: 20px;"
+        "bottom: 170px; left: 20px;",
+        "Call"
     );
 
     // Chatbot Button
@@ -432,7 +437,8 @@ function setupFloatingButtons() {
         null,
         '<i class="fas fa-comments"></i>',
         "chatbot-btn-toggle",
-        "bottom: 20px; right: 20px;"
+        "bottom: 20px; right: 20px;",
+        "Chat"
     );
 
     if (chatbotBtn) {
@@ -470,13 +476,35 @@ function setupFloatingButtons() {
                 ease: "sine.inOut",
             });
         });
+        
+    console.log('✅ Floating buttons created successfully');
 }
 
-function createFloatingButton(href, icon, className, styles) {
+function createFloatingButton(href, icon, className, styles, backupText = '') {
     const btn = document.createElement("a");
     btn.href = href || "javascript:void(0)";
     btn.className = className;
-    btn.innerHTML = icon;
+    btn.title = backupText;
+    
+    // Create icon element with fallback text
+    const iconEl = document.createElement("div");
+    iconEl.style.display = 'flex';
+    iconEl.style.alignItems = 'center';
+    iconEl.style.justifyContent = 'center';
+    iconEl.style.width = '100%';
+    iconEl.style.height = '100%';
+    iconEl.innerHTML = icon;
+    
+    // Add fallback text if icon doesn't render
+    const textSpan = document.createElement('span');
+    textSpan.textContent = backupText;
+    textSpan.style.display = 'none';
+    textSpan.style.fontSize = '0.7rem';
+    textSpan.style.fontWeight = 'bold';
+    
+    iconEl.appendChild(textSpan);
+    btn.appendChild(iconEl);
+    
     btn.style.cssText = `
         position: fixed;
         ${styles}
@@ -484,8 +512,8 @@ function createFloatingButton(href, icon, className, styles) {
         height: 60px;
         border-radius: 50%;
         display: flex !important;
-        align-items: center;
-        justify-content: center;
+        align-items: center !important;
+        justify-content: center !important;
         font-size: 1.8rem;
         color: #fff;
         text-decoration: none;
@@ -497,17 +525,27 @@ function createFloatingButton(href, icon, className, styles) {
 
     if (href) {
         btn.target = "_blank";
+        btn.rel = "noopener noreferrer";
     }
 
     document.body.appendChild(btn);
     
-    // Ensure the icon inside renders properly
-    const iconElement = btn.querySelector('i');
-    if (iconElement) {
-        iconElement.style.display = 'block';
-        iconElement.style.margin = '0';
-    }
+    // Force icon rendering and handle fallback
+    setTimeout(() => {
+        const iElements = btn.querySelectorAll('i');
+        if (iElements.length === 0 && backupText) {
+            textSpan.style.display = 'block';
+        }
+        
+        iElements.forEach(el => {
+            el.style.display = 'inline-block';
+            el.style.margin = '0';
+            el.style.fontSize = '1.8rem';
+            el.style.lineHeight = '1';
+        });
+    }, 50);
     
+    console.log(`✅ Created button: ${className}`, btn);
     return btn;
 }
 
@@ -1034,3 +1072,23 @@ console.log(
     "%cDesigned & Developed by Dilawar Pro 💖",
     "color: #fb5607; font-size: 12px;"
 );
+
+// Verify Font Awesome is loaded
+window.addEventListener('load', function() {
+    const faLinks = document.querySelectorAll('[class*="fa-"]');
+    console.log(`📦 Font Awesome icons found: ${faLinks.length}`);
+    
+    // Force Font Awesome to render if not already done
+    if (window.FontAwesome) {
+        window.FontAwesome.config.autoReplaceSvg = 'nest';
+    }
+    
+    // Check floating buttons
+    const floatingBtns = document.querySelectorAll('.whatsapp-btn, .vibrating-call-btn, .chatbot-btn-toggle');
+    console.log(`🎯 Floating buttons rendered: ${floatingBtns.length}`);
+    
+    floatingBtns.forEach((btn, index) => {
+        const iconCount = btn.querySelectorAll('i').length;
+        console.log(`  Button ${index + 1}: ${btn.className} - Icons: ${iconCount}`);
+    });
+});
