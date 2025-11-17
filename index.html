@@ -90,17 +90,14 @@
     <!-- Toastify CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     
-    <!-- GSAP (updated to latest) -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@latest/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@latest/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@latest/dist/ScrollToPlugin.min.js"></script>
+    <!-- GSAP removed (animations disabled) -->
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-lg navbar-animate">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-lg">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold" href="#home">
                 <i class="fas fa-dumbbell"></i> Your Gym
@@ -118,7 +115,7 @@
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
-            <button class="btn btn-danger pulse-button ms-2 call-btn-nav" data-bs-toggle="modal" data-bs-target="#callModal">
+            <button class="btn btn-danger ms-2 call-btn-nav" data-bs-toggle="modal" data-bs-target="#callModal">
                 <i class="fas fa-phone"></i> Call Us
             </button>
         </div>
@@ -137,7 +134,7 @@
                         Experience premium fitness with state-of-the-art equipment, professional trainers, and personalized wellness programs
                     </p>
                     <div class="hero-buttons">
-                        <button class="btn btn-danger btn-lg me-3 pulse-button" data-bs-toggle="modal" data-bs-target="#callModal">
+                        <button class="btn btn-danger btn-lg me-3" data-bs-toggle="modal" data-bs-target="#callModal">
                             <i class="fas fa-phone me-2"></i>Call Us Now
                         </button>
                         <a href="#plans" class="btn btn-outline-danger btn-lg">
@@ -146,7 +143,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 hero-image">
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop&q=80" alt="Professional gym equipment and fitness training" class="img-fluid hero-img-animate">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop&q=80" alt="Professional gym equipment and fitness training" class="img-fluid rounded-3">
                 </div>
             </div>
         </div>
@@ -157,19 +154,19 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-3 col-sm-6 mb-4 stat-box">
-                    <div class="stat-counter" data-target="5000">0</div>
+                    <div class="stat-counter">5000</div>
                     <p class="stat-label">Happy Members</p>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4 stat-box">
-                    <div class="stat-counter" data-target="50">0</div>
+                    <div class="stat-counter">50</div>
                     <p class="stat-label">Professional Trainers</p>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4 stat-box">
-                    <div class="stat-counter" data-target="100">0</div>
+                    <div class="stat-counter">100</div>
                     <p class="stat-label">Fitness Classes</p>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4 stat-box">
-                    <div class="stat-counter" data-target="15">0</div>
+                    <div class="stat-counter">15</div>
                     <p class="stat-label">Years Experience</p>
                 </div>
             </div>
@@ -319,44 +316,44 @@
             <div class="row g-3">
                 <div class="col-lg-3 col-md-6 gallery-item">
                     <a href="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Premium Gym Equipment">
-                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop&q=80" alt="Premium gym equipment and weight training area" class="img-fluid">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop&q=80" alt="Premium gym equipment and weight training area" class="img-fluid rounded-3">
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-6 gallery-item">
                     <a href="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Cardio Zone">
-                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=400&fit=crop&q=80" alt="Modern cardio equipment fitness center" class="img-fluid">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=400&fit=crop&q=80" alt="Modern cardio equipment fitness center" class="img-fluid rounded-3">
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-6 gallery-item">
                     <a href="https://images.unsplash.com/photo-1552807552-adf29464af70?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Training Area">
-                        <img src="https://images.unsplash.com/photo-1552807552-adf29464af70?w=400&h=400&fit=crop&q=80" alt="Professional fitness training area with mirrors" class="img-fluid">
+                        <img src="https://images.unsplash.com/photo-1552807552-adf29464af70?w=400&h=400&fit=crop&q=80" alt="Professional fitness training area with mirrors" class="img-fluid rounded-3">
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-6 gallery-item">
                     <a href="https://images.unsplash.com/photo-1540497905925-fd7e4d77202e?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Yoga Studio">
-                        <img src="https://images.unsplash.com/photo-1540497905925-fd7e4d77202e?w=400&h=400&fit=crop&q=80" alt="Relaxing yoga studio for flexibility training" class="img-fluid">
+                        <img src="https://images.unsplash.com/photo-1540497905925-fd7e4d77202e?w=400&h=400&fit=crop&q=80" alt="Relaxing yoga studio for flexibility training" class="img-fluid rounded-3">
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-6 gallery-item">
                     <a href="https://images.unsplash.com/photo-1517836357463-d25ddfcb85c7?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Group Classes">
-                        <img src="https://images.unsplash.com/photo-1517836357463-d25ddfcb85c7?w=400&h=400&fit=crop&q=80" alt="Dynamic group fitness classes and training sessions" class="img-fluid">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25ddfcb85c7?w=400&h=400&fit=crop&q=80" alt="Dynamic group fitness classes and training sessions" class="img-fluid rounded-3">
                     </a>
                 </div>
-                <!-- <div class="col-lg-3 col-md-6 gallery-item">
+                <div class="col-lg-3 col-md-6 gallery-item">
                     <a href="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Recovery Zone">
-                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=400&fit=crop&q=80" alt="Wellness recovery zone and relaxation area" class="img-fluid">
+                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=400&fit=crop&q=80" alt="Wellness recovery zone and relaxation area" class="img-fluid rounded-3">
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-6 gallery-item">
                     <a href="https://images.unsplash.com/photo-1574080447640-fa42b5b10dc9?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Swimming Pool">
-                        <img src="https://images.unsplash.com/photo-1574080447640-fa42b5b10dc9?w=400&h=400&fit=crop&q=80" alt="Olympic size swimming pool for aquatic fitness" class="img-fluid">
+                        <img src="https://images.unsplash.com/photo-1574080447640-fa42b5b10dc9?w=400&h=400&fit=crop&q=80" alt="Olympic size swimming pool for aquatic fitness" class="img-fluid rounded-3">
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-6 gallery-item">
                     <a href="https://images.unsplash.com/photo-1618519764d0-50cabcf1e0dd?w=800&h=800&fit=crop&q=80" data-fancybox="gallery" data-caption="Spa & Sauna">
-                        <img src="https://images.unsplash.com/photo-1618519764d0-50cabcf1e0dd?w=400&h=400&fit=crop&q=80" alt="Luxury spa and sauna relaxation facility" class="img-fluid">
+                        <img src="https://images.unsplash.com/photo-1618519764d0-50cabcf1e0dd?w=400&h=400&fit=crop&q=80" alt="Luxury spa and sauna relaxation facility" class="img-fluid rounded-3">
                     </a>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>
