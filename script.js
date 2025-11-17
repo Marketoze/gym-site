@@ -127,8 +127,7 @@ const chatbotResponses = {
 // ============================================
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Wait for Font Awesome to load
-    setTimeout(initializeApp, 100);
+    initializeApp();
 });
 
 function initializeApp() {
@@ -143,31 +142,9 @@ function initializeApp() {
     setupLazyLoading();
     setupSmoothScrolling();
     setupFancybox();
-    setupMobileResponsiveness();
 
     // Log initialization
     console.log("✅ Elite Gym App Initialized Successfully!");
-}
-
-// ============================================
-// MOBILE RESPONSIVENESS SETUP
-// ============================================
-
-function setupMobileResponsiveness() {
-    // Disable animations on very small screens
-    if (window.innerWidth <= 576) {
-        // Reduce animation complexity on mobile
-        gsap.config({ autoKillThreshold: 0.01 });
-    }
-    
-    // Handle window resize
-    let resizeTimer;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-            ScrollTrigger.refresh();
-        }, 250);
-    });
 }
 
 // ============================================
@@ -191,9 +168,6 @@ function setupFancybox() {
 // ============================================
 
 function setupScrollAnimations() {
-    // Check if device is mobile
-    const isMobile = window.innerWidth <= 768;
-    
     // Service Cards Animation
     gsap.utils.toArray(".service-card").forEach((card, index) => {
         gsap.fromTo(
@@ -213,9 +187,8 @@ function setupScrollAnimations() {
                     trigger: card,
                     start: "top 80%",
                     end: "top 20%",
-                    scrub: isMobile ? false : 1,
+                    scrub: 1,
                     markers: false,
-                    invalidateOnRefresh: true,
                 },
             }
         );
@@ -238,9 +211,8 @@ function setupScrollAnimations() {
                     trigger: card,
                     start: "top 75%",
                     end: "top 20%",
-                    scrub: isMobile ? false : 1,
+                    scrub: 1,
                     markers: false,
-                    invalidateOnRefresh: true,
                 },
             }
         );
@@ -263,9 +235,8 @@ function setupScrollAnimations() {
                     trigger: item,
                     start: "top 80%",
                     end: "top 20%",
-                    scrub: isMobile ? false : 1,
+                    scrub: 1,
                     markers: false,
-                    invalidateOnRefresh: true,
                 },
             }
         );
@@ -288,9 +259,8 @@ function setupScrollAnimations() {
                     trigger: card,
                     start: "top 80%",
                     end: "top 20%",
-                    scrub: isMobile ? false : 1,
+                    scrub: 1,
                     markers: false,
-                    invalidateOnRefresh: true,
                 },
             }
         );
@@ -315,17 +285,16 @@ function setupScrollAnimations() {
                     trigger: box,
                     start: "top 80%",
                     end: "top 20%",
-                    scrub: isMobile ? false : 1,
+                    scrub: 1,
                     markers: false,
-                    invalidateOnRefresh: true,
                 },
             }
         );
     });
 
-    // Parallax effect on hero section (disabled on mobile)
+    // Parallax effect on hero section
     const heroSection = document.querySelector(".hero-section");
-    if (heroSection && !isMobile) {
+    if (heroSection) {
         gsap.fromTo(
             ".hero-background",
             {
@@ -339,7 +308,6 @@ function setupScrollAnimations() {
                     end: "bottom top",
                     scrub: 0.5,
                     markers: false,
-                    invalidateOnRefresh: true,
                 },
             }
         );
@@ -414,7 +382,7 @@ function setupFloatingButtons() {
     // WhatsApp Button
     const whatsappBtn = createFloatingButton(
         "https://wa.me/971XXXXXXX?text=Hi%20I%27m%20interested%20in%20Elite%20Gym%20membership",
-        '📱',
+        '<i class="fab fa-whatsapp"></i>',
         "whatsapp-btn",
         "bottom: 100px; left: 20px;"
     );
@@ -422,7 +390,7 @@ function setupFloatingButtons() {
     // Vibrating Call Button
     const callBtn = createFloatingButton(
         "tel:+97100000000",
-        '☎️',
+        '<i class="fas fa-phone"></i>',
         "vibrating-call-btn",
         "bottom: 170px; left: 20px;"
     );
@@ -430,7 +398,7 @@ function setupFloatingButtons() {
     // Chatbot Button
     const chatbotBtn = createFloatingButton(
         null,
-        '💬',
+        '<i class="fas fa-comments"></i>',
         "chatbot-btn-toggle",
         "bottom: 20px; right: 20px;"
     );
@@ -444,7 +412,7 @@ function setupFloatingButtons() {
         });
     }
 
-    // Animate floating buttons
+    // Animate floating buttons on scroll
     gsap.utils.toArray(".whatsapp-btn, .vibrating-call-btn, .chatbot-btn-toggle")
         .forEach((btn) => {
             gsap.fromTo(
@@ -470,42 +438,36 @@ function setupFloatingButtons() {
                 ease: "sine.inOut",
             });
         });
-        
-    console.log('✅ Floating buttons created successfully');
 }
 
-function createFloatingButton(href, emoji, className, styles) {
+function createFloatingButton(href, icon, className, styles) {
     const btn = document.createElement("a");
     btn.href = href || "javascript:void(0)";
     btn.className = className;
-    btn.textContent = emoji;
-    
+    btn.innerHTML = icon;
     btn.style.cssText = `
         position: fixed;
         ${styles}
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
         color: #fff;
         text-decoration: none;
         z-index: 999;
         cursor: pointer;
         border: none;
         transition: all 0.3s ease;
-        line-height: 1;
     `;
 
     if (href) {
         btn.target = "_blank";
-        btn.rel = "noopener noreferrer";
     }
 
     document.body.appendChild(btn);
-    console.log(`✅ Created button: ${className}`);
     return btn;
 }
 
@@ -1032,23 +994,3 @@ console.log(
     "%cDesigned & Developed by Dilawar Pro 💖",
     "color: #fb5607; font-size: 12px;"
 );
-
-// Verify Font Awesome is loaded
-window.addEventListener('load', function() {
-    const faLinks = document.querySelectorAll('[class*="fa-"]');
-    console.log(`📦 Font Awesome icons found: ${faLinks.length}`);
-    
-    // Force Font Awesome to render if not already done
-    if (window.FontAwesome) {
-        window.FontAwesome.config.autoReplaceSvg = 'nest';
-    }
-    
-    // Check floating buttons
-    const floatingBtns = document.querySelectorAll('.whatsapp-btn, .vibrating-call-btn, .chatbot-btn-toggle');
-    console.log(`🎯 Floating buttons rendered: ${floatingBtns.length}`);
-    
-    floatingBtns.forEach((btn, index) => {
-        const iconCount = btn.querySelectorAll('i').length;
-        console.log(`  Button ${index + 1}: ${btn.className} - Icons: ${iconCount}`);
-    });
-});

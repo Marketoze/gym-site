@@ -62,18 +62,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Ensure Font Awesome icons display correctly */
-i {
-    display: inline-block;
-    font-size: inherit;
-    line-height: inherit;
-    vertical-align: -0.125em;
-}
-
-i[class*="fa-"] {
-    font-style: normal;
-}
-
 /* ============================================
    TYPOGRAPHY
    ============================================ */
@@ -467,10 +455,6 @@ a {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     transition: all 0.3s ease;
-    display: inline-block;
-    min-width: 60px;
-    min-height: 60px;
-    line-height: 60px;
 }
 
 .service-card:hover .service-icon {
@@ -717,10 +701,6 @@ a {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    display: inline-block;
-    min-width: 50px;
-    min-height: 50px;
-    line-height: 50px;
 }
 
 .contact-box h3 {
@@ -835,7 +815,7 @@ a {
     height: 60px;
     background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
     border-radius: 50%;
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
@@ -845,11 +825,6 @@ a {
     z-index: 999;
     animation: fadeInUp 0.6s ease;
     transition: all 0.3s ease;
-}
-
-.whatsapp-btn i {
-    display: block;
-    margin: 0;
 }
 
 .whatsapp-btn:hover {
@@ -866,7 +841,7 @@ a {
     height: 60px;
     background: linear-gradient(135deg, #ff006e 0%, #fb5607 100%);
     border-radius: 50%;
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
@@ -876,11 +851,6 @@ a {
     z-index: 999;
     animation: vibrate 0.5s ease infinite, fadeInUp 0.6s ease;
     transition: all 0.3s ease;
-}
-
-.vibrating-call-btn i {
-    display: block;
-    margin: 0;
 }
 
 .vibrating-call-btn:hover {
@@ -909,7 +879,7 @@ a {
     height: 60px;
     background: var(--primary-gradient);
     border-radius: 50%;
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
@@ -921,11 +891,6 @@ a {
     animation: fadeInUp 0.6s ease;
     transition: all 0.3s ease;
     border: none;
-}
-
-.chatbot-btn-toggle i {
-    display: block;
-    margin: 0;
 }
 
 .chatbot-btn-toggle:hover {
@@ -1290,11 +1255,6 @@ a {
         --spacing-2xl: 2rem;
     }
 
-    html, body {
-        width: 100%;
-        overflow-x: hidden;
-    }
-
     .hero-title {
         font-size: 2rem;
     }
@@ -1354,19 +1314,6 @@ a {
 
     .testimonial-card {
         border-left: 3px solid var(--primary-color);
-    }
-
-    /* Disable complex animations on mobile */
-    .hero-background::before,
-    .hero-background::after {
-        animation: none !important;
-        display: none;
-    }
-
-    /* Optimize scrolling performance */
-    * {
-        -webkit-backface-visibility: hidden;
-        -webkit-perspective: 1000;
     }
 }
 
