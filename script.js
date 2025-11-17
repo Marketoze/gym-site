@@ -127,7 +127,8 @@ const chatbotResponses = {
 // ============================================
 
 document.addEventListener("DOMContentLoaded", function () {
-    initializeApp();
+    // Wait for Font Awesome to load
+    setTimeout(initializeApp, 100);
 });
 
 function initializeApp() {
@@ -482,7 +483,7 @@ function createFloatingButton(href, icon, className, styles) {
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        display: flex;
+        display: flex !important;
         align-items: center;
         justify-content: center;
         font-size: 1.8rem;
@@ -499,6 +500,14 @@ function createFloatingButton(href, icon, className, styles) {
     }
 
     document.body.appendChild(btn);
+    
+    // Ensure the icon inside renders properly
+    const iconElement = btn.querySelector('i');
+    if (iconElement) {
+        iconElement.style.display = 'block';
+        iconElement.style.margin = '0';
+    }
+    
     return btn;
 }
 
