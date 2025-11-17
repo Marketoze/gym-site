@@ -411,34 +411,28 @@ function setupServiceCards() {
 // ============================================
 
 function setupFloatingButtons() {
-    // Verify Font Awesome is loaded
-    console.log('Font Awesome loaded:', typeof FontAwesome !== 'undefined');
-    
     // WhatsApp Button
     const whatsappBtn = createFloatingButton(
         "https://wa.me/971XXXXXXX?text=Hi%20I%27m%20interested%20in%20Elite%20Gym%20membership",
-        '<i class="fab fa-whatsapp"></i>',
+        '📱',
         "whatsapp-btn",
-        "bottom: 100px; left: 20px;",
-        "WhatsApp"
+        "bottom: 100px; left: 20px;"
     );
 
     // Vibrating Call Button
     const callBtn = createFloatingButton(
         "tel:+97100000000",
-        '<i class="fas fa-phone"></i>',
+        '☎️',
         "vibrating-call-btn",
-        "bottom: 170px; left: 20px;",
-        "Call"
+        "bottom: 170px; left: 20px;"
     );
 
     // Chatbot Button
     const chatbotBtn = createFloatingButton(
         null,
-        '<i class="fas fa-comments"></i>',
+        '💬',
         "chatbot-btn-toggle",
-        "bottom: 20px; right: 20px;",
-        "Chat"
+        "bottom: 20px; right: 20px;"
     );
 
     if (chatbotBtn) {
@@ -450,7 +444,7 @@ function setupFloatingButtons() {
         });
     }
 
-    // Animate floating buttons on scroll
+    // Animate floating buttons
     gsap.utils.toArray(".whatsapp-btn, .vibrating-call-btn, .chatbot-btn-toggle")
         .forEach((btn) => {
             gsap.fromTo(
@@ -480,30 +474,11 @@ function setupFloatingButtons() {
     console.log('✅ Floating buttons created successfully');
 }
 
-function createFloatingButton(href, icon, className, styles, backupText = '') {
+function createFloatingButton(href, emoji, className, styles) {
     const btn = document.createElement("a");
     btn.href = href || "javascript:void(0)";
     btn.className = className;
-    btn.title = backupText;
-    
-    // Create icon element with fallback text
-    const iconEl = document.createElement("div");
-    iconEl.style.display = 'flex';
-    iconEl.style.alignItems = 'center';
-    iconEl.style.justifyContent = 'center';
-    iconEl.style.width = '100%';
-    iconEl.style.height = '100%';
-    iconEl.innerHTML = icon;
-    
-    // Add fallback text if icon doesn't render
-    const textSpan = document.createElement('span');
-    textSpan.textContent = backupText;
-    textSpan.style.display = 'none';
-    textSpan.style.fontSize = '0.7rem';
-    textSpan.style.fontWeight = 'bold';
-    
-    iconEl.appendChild(textSpan);
-    btn.appendChild(iconEl);
+    btn.textContent = emoji;
     
     btn.style.cssText = `
         position: fixed;
@@ -514,13 +489,14 @@ function createFloatingButton(href, icon, className, styles, backupText = '') {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        font-size: 1.8rem;
+        font-size: 2rem;
         color: #fff;
         text-decoration: none;
         z-index: 999;
         cursor: pointer;
         border: none;
         transition: all 0.3s ease;
+        line-height: 1;
     `;
 
     if (href) {
@@ -529,23 +505,7 @@ function createFloatingButton(href, icon, className, styles, backupText = '') {
     }
 
     document.body.appendChild(btn);
-    
-    // Force icon rendering and handle fallback
-    setTimeout(() => {
-        const iElements = btn.querySelectorAll('i');
-        if (iElements.length === 0 && backupText) {
-            textSpan.style.display = 'block';
-        }
-        
-        iElements.forEach(el => {
-            el.style.display = 'inline-block';
-            el.style.margin = '0';
-            el.style.fontSize = '1.8rem';
-            el.style.lineHeight = '1';
-        });
-    }, 50);
-    
-    console.log(`✅ Created button: ${className}`, btn);
+    console.log(`✅ Created button: ${className}`);
     return btn;
 }
 
