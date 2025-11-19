@@ -695,3 +695,46 @@ console.log(
     "%cDesigned & Developed by Dilawar Pro 💖",
     "color: #fb5607; font-size: 12px;"
 );
+ let deferredPrompt;
+
+  // Listen for the `beforeinstallprompt` event
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault(); // Prevent the default mini-infobar from appearing
+    deferredPrompt = e; // Save the event for later use
+    const installButton = document.getElementById('install-button');
+    installButton.style.display = 'block'; // Show the "Add to Home" button
+
+    // Add click event listener to the button
+    installButton.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt(); // Show the install prompt
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+        deferredPrompt = null; // Reset the deferred prompt
+      }
+    });
+  });
+
+  // Hide the button if the app is already installed
+  window.addEventListener('appinstalled', () => {
+    console.log('PWA installed');
+    const installButton = document.getElementById('install-button');
+    installButton.style.display = 'none'; // Hide the "Add to Home" button
+  });
+
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("service-worker.js")
+        .then(registration => {
+          console.log("Service Worker registered with scope:", registration.scope);
+        })
+        .catch(error => {
+          console.error("Service Worker registration failed:", error);
+        });
+    });
+  }
