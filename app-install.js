@@ -72,22 +72,27 @@ function registerServiceWorker() {
 
 // Update install button visibility and state
 function updateInstallButtonUI() {
-  const installBtn = document.getElementById('pwa-install-btn');
+  const navbarBtn = document.getElementById('pwa-install-btn');
+  const footerBtn = document.getElementById('footer-install-btn');
   
-  if (!installBtn) return;
+  const allButtons = [navbarBtn, footerBtn].filter(btn => btn !== null);
+
+  if (allButtons.length === 0) return;
 
   if (isInstalled) {
-    // Hide button if app is installed
-    installBtn.style.display = 'none';
-    console.log('[PWA] Install button hidden - app already installed');
+    // Hide all buttons if app is installed
+    allButtons.forEach(btn => btn.style.display = 'none');
+    console.log('[PWA] Install buttons hidden - app already installed');
   } else if (deferredPrompt) {
-    // Show button if can install
-    installBtn.style.display = 'block';
-    installBtn.disabled = false;
-    console.log('[PWA] Install button shown - ready to install');
+    // Show all buttons if can install
+    allButtons.forEach(btn => {
+      btn.style.display = 'block';
+      btn.disabled = false;
+    });
+    console.log('[PWA] Install buttons shown - ready to install');
   } else {
-    // Hide button if can't install (browser doesn't support or already installed)
-    installBtn.style.display = 'none';
+    // Hide all buttons if can't install
+    allButtons.forEach(btn => btn.style.display = 'none');
   }
 }
 
