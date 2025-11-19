@@ -1,12 +1,12 @@
 // Service Worker for [Your Gym] PWA
 const CACHE_NAME = 'gym-site-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/script.js',
-  '/manifest.json',
-  '/app-install.js'
+  './',
+  './index.html',
+  './styles.css',
+  './script.js',
+  './manifest.json',
+  './app-install.js'
 ];
 
 // Install event - cache resources
